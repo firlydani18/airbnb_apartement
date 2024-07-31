@@ -24,7 +24,9 @@ export const currentUser = async(
 
   try {
    
-    const { id } = req.params;
+    // const { id } = req.params;
+    const id = req.params.id;
+    //const userId = req.user && req.user.id;
     const user = await User.findByPk(id,  { attributes: { exclude: ['password']} 
     });
     if (user) {

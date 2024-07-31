@@ -7,7 +7,8 @@ import Loader from "../components/ui/Loader";
 import {useAppContext} from "../context/AppContext";
 import {signInUser} from "../redux/userSlice";
 import {useAppDispatch} from "../redux/hooks";
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
+import { UserType } from "../../../backend/src/shared/types";
 
 export type UpdateProfileForm = {
   id: string;
@@ -19,10 +20,14 @@ export type UpdateProfileForm = {
 };
 
 export default function Profile() {
+  const {id} = useParams();
   const {showToast} = useAppContext();
   const dispatch = useAppDispatch();
   const queryClient = new QueryClient();
-  const {data: user, isLoading} = useQuery("fetchUser", currentUserApi);
+  // const {data: user, isLoading} = useQuery("fetchUser", currentUserApi);
+  const {data: user, isLoading} = useQuery<UserType>("fetchUser", () =>
+    currentUserApi(id as string)
+);
   const [isTypePassword, setIsTypePassword] = useState("password");
 
   const {

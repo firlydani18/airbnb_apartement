@@ -5,8 +5,8 @@ import {UpdateProfileForm} from "../pages/Profile";
 
 
 
-export async function currentUserApi(): Promise<UserType> {
-  const response = await fetch(`${API_URL}/api/v1/user/current-user`, {
+export async function currentUserApi(id: string): Promise<UserType> {
+  const response = await fetch(`${API_URL}/api/v1/user/current-user/${id}`, {
     credentials: "include",
   });
   const responseBody = await response.json();

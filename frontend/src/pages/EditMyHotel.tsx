@@ -11,7 +11,7 @@ export default function EditMyHotel() {
   //const navigate = useNavigate();
   const queryClient = new QueryClient();
 
-  const {data: room, isLoading: dataLoading} = useQuery("hotelById", () =>
+  const {data: room, isLoading: dataLoading} = useQuery("roomById", () =>
     roomById(roomId!)
   );
 

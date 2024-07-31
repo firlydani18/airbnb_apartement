@@ -29,7 +29,7 @@ export async function myRoom(): Promise<RoomType[]> {
 }
 
 export async function roomById(roomId: string): Promise<RoomType> {
-  const response = await fetch(`${API_URL}/api/v1/my-hotel/${roomId}`, {
+  const response = await fetch(`${API_URL}/api/v1/my-apartement/${roomId}`, {
     credentials: "include",
   });
 

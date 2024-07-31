@@ -46,11 +46,11 @@ function App() {
               {/* <Route path="/sign-in" element={<SignIn />} /> */}
               {/* <PrivateRoute path="/admin" element={<AdminProfileList />} /> */}
               < Route path="/getAllUser" element={<AllUsers/>} />
-                < Route path="/my-hotels" element={<MyHotel />} />
+                < Route path="/my-apartement" element={<MyHotel />} />
                 <Route path="/my-bookings" element={<MyBookings />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/hotel/:hotelId/booking" element={<Booking />} />
-                <Route path="/my-hotels/create-hotel" element={<CreateHotel />} />
+                <Route path="/my-apartement/create-room" element={<CreateHotel />} />
                 <Route path="/my-hotels/edit-hotel/:hotelId" element={<EditMyHotel />} />  
                 {/* <Route path="/availability/add-stock" element={<AddStockForm />} /> */}
                 {/* <Route path="/my-hotel/:hotelId/availability" element={<AvailabilityPage />} /> */}
